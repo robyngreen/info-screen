@@ -17,7 +17,7 @@ var config = {
 
 // Compile Sass
 gulp.task('compile:sass', function() {
-  return gulp.src('./css/app.scss')
+  return gulp.src('./sass/app.scss')
     .pipe(sass({
       includePaths: [config.bootstrapDir + '/assets/stylesheets']
     }))
