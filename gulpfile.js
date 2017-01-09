@@ -6,6 +6,8 @@
 //=======================================================
 var gulp = require('gulp');
 
+// git rm -r --cached bower_components/
+
 var sass = require('gulp-sass');
 
 var config = {
