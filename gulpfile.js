@@ -8,6 +8,9 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var rename = require('gulp-rename');
 var sync = require('browser-sync');
+var runSequence = require('run-sequence');
+var concat = require('gulp-concat');
+var order = require('gulp-order');
 
 // Workflow:
 // npm creates/uses package.json - this installs packages
@@ -53,4 +56,29 @@ gulp.task('compile:sass', function() {
     .pipe(sync.stream({match: '**/*.css'}));
 });
 
-gulp.task('default', ['compile:sass']);
+//=======================================================
+// Concat all CSS files into a master bundle.
+//=======================================================
+gulp.task('concat', function () {
+  return gulp.src([
+    './docroot/css/*.css'
+  ])
+  // Reorder the files so global and btn are first.
+  .pipe(order([
+    'docroot/css/app.css',
+    'docroot/css/*.css'
+  ], { base: './' }))
+  .pipe(concat('all.css'))
+  .pipe(gulp.dest('./docroot/css'))
+  .pipe(sync.stream());
+});
+
+//gulp.task('default', ['compile:sass']);
+
+gulp.task('default', function(callback) {
+  runSequence(
+    ['compile:sass'],
+    'concat',
+    callback
+  );
+});
