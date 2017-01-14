@@ -8,6 +8,14 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 
 // git rm -r --cached bower_components/
+// http://getbootstrap.com/getting-started/
+// http://treyhunner.com/2015/02/creating-a-custom-bootstrap-build/
+// https://darksky.net/dev/docs/forecast
+//
+// Google calendar
+// Google traffic map
+// Weather
+// Budget amount
 
 
 var config = {
