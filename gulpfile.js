@@ -6,6 +6,8 @@
 //=======================================================
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var rename = require('gulp-rename');
+var sync = require('browser-sync');
 
 // Workflow:
 // npm creates/uses package.json - this installs packages
@@ -39,12 +41,16 @@ var config = {
 
 // Compile Sass
 gulp.task('compile:sass', function() {
-  //return gulp.src('./sass/app.scss')
   return gulp.src('./sass/{global,components}/**/*.scss')
     .pipe(sass({
       includePaths: [config.bootstrapDir + '/assets/stylesheets']
     }))
-    .pipe(gulp.dest(config.publicDir + '/css'));
+    .pipe(rename(function (path) {
+      path.dirname = '';
+      return path;
+    }))
+    .pipe(gulp.dest(config.publicDir + '/css'))
+    .pipe(sync.stream({match: '**/*.css'}));
 });
 
 gulp.task('default', ['compile:sass']);
