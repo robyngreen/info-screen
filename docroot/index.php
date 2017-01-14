@@ -7,7 +7,7 @@
     <title>GreenHome</title>
 
     <!-- Bootstrap -->
-    <link href="css/app.css" rel="stylesheet">
+    <link href="css/all.css" rel="stylesheet">
 
     <!--// @todo: can this go away and/or upgrade? //-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -15,9 +15,7 @@
   </head>
   <body>
 
-    <div class="content-container">
-      <div class="blur"></div>
-    </div>
+    <h2>Weather</h2>
 
   </body>
 </html>
