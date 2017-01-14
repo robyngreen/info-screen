@@ -7,6 +7,19 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 
+// Workflow:
+// npm creates/uses package.json - this installs packages
+
+// http://treyhunner.com/2015/02/creating-a-custom-bootstrap-build/
+//
+// To use on project:
+// gulp
+//
+// To update package:
+// npm i -g npm-check-updates
+// npm-check-updates -u
+// npm install
+
 // git rm -r --cached bower_components/
 // http://getbootstrap.com/getting-started/
 // http://treyhunner.com/2015/02/creating-a-custom-bootstrap-build/
@@ -25,7 +38,8 @@ var config = {
 
 // Compile Sass
 gulp.task('compile:sass', function() {
-  return gulp.src('./sass/app.scss')
+  //return gulp.src('./sass/app.scss')
+  return gulp.src('./sass/{global,components}/**/*.scss')
     .pipe(sass({
       includePaths: [config.bootstrapDir + '/assets/stylesheets']
     }))
