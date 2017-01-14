@@ -1,0 +1,22 @@
+//===========================
+// Breakpoints
+//===========================
+
+// With the font size as 100% assumed 16px, approximate sizes given. 
+// 480px.
+$bp-xxsm: 30em;
+
+// 640px. Used as upper mobile.
+$bp-xsm: 40em;
+
+// 768px (The comp breaks for tab at 768px)
+$bp-smt: 48em;
+
+// 880px.
+$bp-sm: 55em;
+
+// 1024px. ( Start of desktop)
+$bp-md: 64em;
+
+// 1200px.
+$bp-lg: 75em;

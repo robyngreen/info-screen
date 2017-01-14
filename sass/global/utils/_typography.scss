@@ -1,0 +1,116 @@
+// Type
+//
+// Custom fonts are loaded via JavaScript provided by fonts.com.
+//
+// Markup:
+// <h3>Base</h3>
+// <h4>font-stack-base</h4>
+// <div style="font: 20px/2 'Gotham SSm A', 'Gotham SSm B', 'Gotham', Sans-Serif"> Gotham SSm A </div>
+// <div style="font: italic 20px/2 'Gotham SSm A', 'Gotham SSm B', 'Gotham', Sans-Serif"> Gotham SSm A Italic </div>
+// <div style="font: 500 20px/2 'Gotham SSm A', 'Gotham SSm B', 'Gotham', Sans-Serif"> Gotham SSm A Regular</div>
+// <div style="font: bold 20px/2 'Gotham SSm A', 'Gotham SSm B', 'Gotham', Sans-Serif"> Gotham SSm A Bold </div>
+// <div style="font: bold italic 20px/2 'Gotham SSm A', 'Gotham SSm B', 'Gotham', Sans-Serif"> Gotham SSm A Italic </div>
+//
+// Weight: 999
+//
+// Style guide: Type
+
+@mixin font-stack-base {
+  font-family: 'Gotham SSm A', 'Gotham SSm B', 'Gotham', Sans-Serif;
+}
+
+@mixin font-stack-secondary {
+  font-family: 'Gotham SSm A', 'Gotham SSm B', 'Gotham', Sans-Serif;
+}
+
+@mixin font-stack-tertiary {
+  font-family: 'Minion W01', 'Georgia', serif;
+}
+
+$font-weight-bold: bold;
+$font-italic: italic;
+
+// Font sizes.
+// 9px.
+$font-size-9: 0.5625rem;
+// 10px.
+$font-size-10: 0.625rem;
+// 12px.
+$font-size-12: 0.75rem;
+// 14px.
+$font-size-14: 0.875rem;
+// 16px.
+$font-size-16: 1rem;
+// 18px.
+$font-size-18: 1.125rem;
+// 19px.
+$font-size-19: 1.1875rem;
+// 21px.
+$font-size-21: 1.3125rem;
+// 24px.
+$font-size-24: 1.5rem;
+// 28px.
+$font-size-28: 1.75rem;
+// 32px.
+$font-size-32: 2rem;
+// 36px.
+$font-size-36: 2.25rem;
+// 48px.
+$font-size-48: 3rem;
+
+
+@mixin font-size-heading1 {
+  font-size: $font-size-28;
+
+  @include breakpoint($bp-smt) {
+    font-size: $font-size-36;
+  }
+
+  @include breakpoint($bp-md) {
+    font-size: $font-size-48;
+  }
+}
+
+@mixin font-size-heading2 {
+  font-size: $font-size-18;
+
+  @include breakpoint($bp-smt) {
+    font-size: $font-size-24;
+  }
+
+  @include breakpoint($bp-md) {
+    font-size: $font-size-32;
+  }
+}
+
+@mixin font-size-heading3 {
+  font-size: $font-size-16;
+
+  @include breakpoint($bp-smt) {
+    font-size: $font-size-21;
+  }
+
+  @include breakpoint($bp-md) {
+    font-size: $font-size-28;
+  }
+}
+
+@mixin font-size-heading4 {
+  font-size: $font-size-14;
+
+  @include breakpoint($bp-md) {
+    font-size: $font-size-19;
+  }
+}
+
+@mixin font-size-heading5 {
+  font-size: $font-size-14;
+
+  @include breakpoint($bp-md) {
+    font-size: $font-size-16;
+  }
+}
+
+@mixin font-size-heading6 {
+  font-size: $font-size-14;
+}
