@@ -11,6 +11,9 @@ var sync = require('browser-sync');
 var runSequence = require('run-sequence');
 var concat = require('gulp-concat');
 var order = require('gulp-order');
+var del = require('del');
+
+// pluto sans extra light
 
 // Workflow:
 // npm creates/uses package.json - this installs packages
@@ -73,10 +76,18 @@ gulp.task('concat', function () {
   .pipe(sync.stream());
 });
 
+// Clean style guide files.
+gulp.task('clean', function () {
+  return del([
+    './docroot/css/*'
+  ], {force: true});
+});
+
 //gulp.task('default', ['compile:sass']);
 
 gulp.task('default', function(callback) {
   runSequence(
+    'clean',
     ['compile:sass'],
     'concat',
     callback
