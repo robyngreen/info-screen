@@ -9,6 +9,7 @@ var sass = require('gulp-sass');
 
 // Workflow:
 // npm creates/uses package.json - this installs packages
+// What does bower.json do then?
 
 // http://treyhunner.com/2015/02/creating-a-custom-bootstrap-build/
 //
