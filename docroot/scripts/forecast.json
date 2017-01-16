@@ -1,0 +1,396 @@
+
+{
+  "response": {
+  "version":"0.1",
+  "termsofService":"http://www.wunderground.com/weather/api/d/terms.html",
+  "features": {
+  "forecast": 1
+  }
+	}
+		,
+	"forecast":{
+		"txt_forecast": {
+		"date":"6:32 AM CST",
+		"forecastday": [
+		{
+		"period":0,
+		"icon":"chancetstorms",
+		"icon_url":"http://icons.wxug.com/i/c/k/chancetstorms.gif",
+		"title":"Monday",
+		"fcttext":"Scattered thunderstorms. A few storms may be severe. High 67F. Winds SSE at 10 to 15 mph. Chance of rain 60%.",
+		"fcttext_metric":"Variable clouds with scattered thunderstorms. A few storms may be severe. High 19C. Winds SSE at 10 to 15 km/h. Chance of rain 60%.",
+		"pop":"60"
+		}
+		,
+		{
+		"period":1,
+		"icon":"nt_chancetstorms",
+		"icon_url":"http://icons.wxug.com/i/c/k/nt_chancetstorms.gif",
+		"title":"Monday Night",
+		"fcttext":"Scattered thunderstorms during the evening. Partly cloudy skies after midnight. Low 44F. Winds W at 5 to 10 mph. Chance of rain 50%.",
+		"fcttext_metric":"A stray shower or thunderstorm is possible early. Partly cloudy skies. Low 6C. Winds W at 10 to 15 km/h.",
+		"pop":"50"
+		}
+		,
+		{
+		"period":2,
+		"icon":"mostlycloudy",
+		"icon_url":"http://icons.wxug.com/i/c/k/mostlycloudy.gif",
+		"title":"Tuesday",
+		"fcttext":"Mainly cloudy. High 54F. Winds WNW at 5 to 10 mph.",
+		"fcttext_metric":"Mostly cloudy skies. High 12C. Winds W at 10 to 15 km/h.",
+		"pop":"10"
+		}
+		,
+		{
+		"period":3,
+		"icon":"nt_chancerain",
+		"icon_url":"http://icons.wxug.com/i/c/k/nt_chancerain.gif",
+		"title":"Tuesday Night",
+		"fcttext":"Cloudy with occasional rain showers. Low 41F. Winds light and variable. Chance of rain 50%.",
+		"fcttext_metric":"Overcast with rain showers at times. Low around 5C. Winds light and variable. Chance of rain 50%.",
+		"pop":"50"
+		}
+		,
+		{
+		"period":4,
+		"icon":"chancerain",
+		"icon_url":"http://icons.wxug.com/i/c/k/chancerain.gif",
+		"title":"Wednesday",
+		"fcttext":"Showers early then thundershowers developing later in the day. High 52F. Winds light and variable. Chance of rain 60%.",
+		"fcttext_metric":"Showers early then thundershowers developing later in the day. High 11C. Winds light and variable. Chance of rain 60%.",
+		"pop":"60"
+		}
+		,
+		{
+		"period":5,
+		"icon":"nt_rain",
+		"icon_url":"http://icons.wxug.com/i/c/k/nt_rain.gif",
+		"title":"Wednesday Night",
+		"fcttext":"A steady rain early. Showers with perhaps a rumble of thunder developing late. Low 46F. Winds light and variable. Chance of rain 90%.",
+		"fcttext_metric":"Thundershowers following a period of rain early. Low 7C. Winds light and variable. Chance of rain 90%.",
+		"pop":"90"
+		}
+		,
+		{
+		"period":6,
+		"icon":"tstorms",
+		"icon_url":"http://icons.wxug.com/i/c/k/tstorms.gif",
+		"title":"Thursday",
+		"fcttext":"Thunderstorms in the morning followed by occasional showers in the afternoon. High 57F. Winds light and variable. Chance of rain 80%.",
+		"fcttext_metric":"Thunderstorms in the morning followed by occasional showers in the afternoon. High 14C. Winds light and variable. Chance of rain 80%.",
+		"pop":"80"
+		}
+		,
+		{
+		"period":7,
+		"icon":"nt_chancerain",
+		"icon_url":"http://icons.wxug.com/i/c/k/nt_chancerain.gif",
+		"title":"Thursday Night",
+		"fcttext":"Showers in the evening with some clearing overnight. Low 47F. Winds light and variable. Chance of rain 40%.",
+		"fcttext_metric":"Rain showers early with mostly cloudy conditions late. Low 8C. Winds light and variable. Chance of rain 40%.",
+		"pop":"40"
+		}
+		]
+		},
+		"simpleforecast": {
+		"forecastday": [
+		{"date":{
+	"epoch":"1484614800",
+	"pretty":"7:00 PM CST on January 16, 2017",
+	"day":16,
+	"month":1,
+	"year":2017,
+	"yday":15,
+	"hour":19,
+	"min":"00",
+	"sec":0,
+	"isdst":"0",
+	"monthname":"January",
+	"monthname_short":"Jan",
+	"weekday_short":"Mon",
+	"weekday":"Monday",
+	"ampm":"PM",
+	"tz_short":"CST",
+	"tz_long":"America/Chicago"
+},
+		"period":1,
+		"high": {
+		"fahrenheit":"67",
+		"celsius":"19"
+		},
+		"low": {
+		"fahrenheit":"44",
+		"celsius":"7"
+		},
+		"conditions":"Chance of a Thunderstorm",
+		"icon":"chancetstorms",
+		"icon_url":"http://icons.wxug.com/i/c/k/chancetstorms.gif",
+		"skyicon":"",
+		"pop":60,
+		"qpf_allday": {
+		"in": 0.28,
+		"mm": 7
+		},
+		"qpf_day": {
+		"in": 0.25,
+		"mm": 6
+		},
+		"qpf_night": {
+		"in": 0.02,
+		"mm": 1
+		},
+		"snow_allday": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"snow_day": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"snow_night": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"maxwind": {
+		"mph": 15,
+		"kph": 24,
+		"dir": "SSE",
+		"degrees": 165
+		},
+		"avewind": {
+		"mph": 10,
+		"kph": 16,
+		"dir": "SSE",
+		"degrees": 165
+		},
+		"avehumidity": 91,
+		"maxhumidity": 0,
+		"minhumidity": 0
+		}
+		,
+		{"date":{
+	"epoch":"1484701200",
+	"pretty":"7:00 PM CST on January 17, 2017",
+	"day":17,
+	"month":1,
+	"year":2017,
+	"yday":16,
+	"hour":19,
+	"min":"00",
+	"sec":0,
+	"isdst":"0",
+	"monthname":"January",
+	"monthname_short":"Jan",
+	"weekday_short":"Tue",
+	"weekday":"Tuesday",
+	"ampm":"PM",
+	"tz_short":"CST",
+	"tz_long":"America/Chicago"
+},
+		"period":2,
+		"high": {
+		"fahrenheit":"54",
+		"celsius":"12"
+		},
+		"low": {
+		"fahrenheit":"41",
+		"celsius":"5"
+		},
+		"conditions":"Mostly Cloudy",
+		"icon":"mostlycloudy",
+		"icon_url":"http://icons.wxug.com/i/c/k/mostlycloudy.gif",
+		"skyicon":"",
+		"pop":10,
+		"qpf_allday": {
+		"in": 0.05,
+		"mm": 1
+		},
+		"qpf_day": {
+		"in": 0.00,
+		"mm": 0
+		},
+		"qpf_night": {
+		"in": 0.05,
+		"mm": 1
+		},
+		"snow_allday": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"snow_day": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"snow_night": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"maxwind": {
+		"mph": 10,
+		"kph": 16,
+		"dir": "WNW",
+		"degrees": 283
+		},
+		"avewind": {
+		"mph": 6,
+		"kph": 10,
+		"dir": "WNW",
+		"degrees": 283
+		},
+		"avehumidity": 73,
+		"maxhumidity": 0,
+		"minhumidity": 0
+		}
+		,
+		{"date":{
+	"epoch":"1484787600",
+	"pretty":"7:00 PM CST on January 18, 2017",
+	"day":18,
+	"month":1,
+	"year":2017,
+	"yday":17,
+	"hour":19,
+	"min":"00",
+	"sec":0,
+	"isdst":"0",
+	"monthname":"January",
+	"monthname_short":"Jan",
+	"weekday_short":"Wed",
+	"weekday":"Wednesday",
+	"ampm":"PM",
+	"tz_short":"CST",
+	"tz_long":"America/Chicago"
+},
+		"period":3,
+		"high": {
+		"fahrenheit":"52",
+		"celsius":"11"
+		},
+		"low": {
+		"fahrenheit":"46",
+		"celsius":"8"
+		},
+		"conditions":"Chance of Rain",
+		"icon":"chancerain",
+		"icon_url":"http://icons.wxug.com/i/c/k/chancerain.gif",
+		"skyicon":"",
+		"pop":60,
+		"qpf_allday": {
+		"in": 0.91,
+		"mm": 23
+		},
+		"qpf_day": {
+		"in": 0.10,
+		"mm": 3
+		},
+		"qpf_night": {
+		"in": 0.81,
+		"mm": 21
+		},
+		"snow_allday": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"snow_day": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"snow_night": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"maxwind": {
+		"mph": 5,
+		"kph": 8,
+		"dir": "ENE",
+		"degrees": 75
+		},
+		"avewind": {
+		"mph": 4,
+		"kph": 6,
+		"dir": "ENE",
+		"degrees": 75
+		},
+		"avehumidity": 85,
+		"maxhumidity": 0,
+		"minhumidity": 0
+		}
+		,
+		{"date":{
+	"epoch":"1484874000",
+	"pretty":"7:00 PM CST on January 19, 2017",
+	"day":19,
+	"month":1,
+	"year":2017,
+	"yday":18,
+	"hour":19,
+	"min":"00",
+	"sec":0,
+	"isdst":"0",
+	"monthname":"January",
+	"monthname_short":"Jan",
+	"weekday_short":"Thu",
+	"weekday":"Thursday",
+	"ampm":"PM",
+	"tz_short":"CST",
+	"tz_long":"America/Chicago"
+},
+		"period":4,
+		"high": {
+		"fahrenheit":"57",
+		"celsius":"14"
+		},
+		"low": {
+		"fahrenheit":"47",
+		"celsius":"8"
+		},
+		"conditions":"Thunderstorm",
+		"icon":"tstorms",
+		"icon_url":"http://icons.wxug.com/i/c/k/tstorms.gif",
+		"skyicon":"",
+		"pop":80,
+		"qpf_allday": {
+		"in": 0.13,
+		"mm": 3
+		},
+		"qpf_day": {
+		"in": 0.09,
+		"mm": 2
+		},
+		"qpf_night": {
+		"in": 0.04,
+		"mm": 1
+		},
+		"snow_allday": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"snow_day": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"snow_night": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"maxwind": {
+		"mph": 5,
+		"kph": 8,
+		"dir": "SSE",
+		"degrees": 155
+		},
+		"avewind": {
+		"mph": 3,
+		"kph": 5,
+		"dir": "SSE",
+		"degrees": 155
+		},
+		"avehumidity": 92,
+		"maxhumidity": 0,
+		"minhumidity": 0
+		}
+		]
+		}
+	}
+}

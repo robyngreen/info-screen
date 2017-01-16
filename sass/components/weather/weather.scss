@@ -37,3 +37,9 @@
     width: 175px;
   }
 }
+.current-conditions {
+  float: left;
+  width: 50%;
+  @include font-stack-condensed;
+  font-size: 1.5em;
+}

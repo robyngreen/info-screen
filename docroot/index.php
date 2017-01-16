@@ -24,6 +24,9 @@
         <div class="current-weather">
           <canvas id="weather-icon"></canvas>
         </div>
+        <div class="current-conditions">
+          <p>Scattered thunderstorms. A few storms may be severe. High 67F. Winds SSE at 10 to 15 mph. Chance of rain 60%</p>
+        </div>
       </div>
     </div>
 
@@ -34,14 +37,14 @@
 
     <div class="map-wrapper">
       <div class="weather-map map">
-        <img src="http://api.wunderground.com/api/13d3adca9dd11d63/animatedradar/q/AR/Conway.png?width=500&height=250&newmaps=1&timelabel=1&timelabel.y=10&num=5&delay=50&smooth=1&noclutter=1&rainsnow=1">
+        <!--//<img src="http://api.wunderground.com/api/13d3adca9dd11d63/animatedradar/q/AR/Conway.png?width=500&height=250&newmaps=1&timelabel=1&timelabel.y=10&num=5&delay=50&smooth=1&noclutter=1&rainsnow=1">//-->
       </div>
       <div id="trafficMap" class="traffic-map map"></div>
     </div>
 
     <script src="/scripts/main.js"></script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOzStmGXlCBYxgCKLPruGgqQGGxIfnIaI&callback=initTrafficMap">
+    <!--//<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOzStmGXlCBYxgCKLPruGgqQGGxIfnIaI&callback=initTrafficMap">//-->
     </script>
 
   </body>

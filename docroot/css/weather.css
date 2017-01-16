@@ -37,3 +37,9 @@
   width: 25%; }
   .current-weather canvas {
     width: 175px; }
+
+.current-conditions {
+  float: left;
+  width: 50%;
+  font-family: 'SST-condensed';
+  font-size: 1.5em; }
