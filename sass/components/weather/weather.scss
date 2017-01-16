@@ -1,0 +1,39 @@
+// Weather
+//
+// Weather wrapper styles used site wide.
+
+// Import site utilities.
+@import '../../global/utils/init';
+
+.weather {
+  @include font-stack-light;
+  color: $color-white;
+  @include text-shadow-light;
+  width: 66%;
+  float: left;
+
+  .wrapper {
+    margin-top: 15px;
+  }
+}
+.location {
+  @include font-stack-condensed;
+  font-size: $font-size-48;
+  border-bottom: 1px solid $color-white;
+  padding-bottom: 3px;
+}
+.current-temp {
+  font-size: $font-size-100;
+  float: left;
+  width: 25%;
+  margin-top: -40px;
+  text-align: right;
+}
+.current-weather {
+  float: left;
+  width: 25%;
+
+  canvas {
+    width: 175px;
+  }
+}

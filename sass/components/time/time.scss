@@ -1,0 +1,26 @@
+// Weather
+//
+// Weather wrapper styles used site wide.
+
+// Import site utilities.
+@import '../../global/utils/init';
+
+.time {
+  float: right;
+  width: 33%;
+  @include font-stack-light;
+  color: $color-white;
+  @include text-shadow-light;
+  margin-top: 20px;
+  padding-right: 10px;
+}
+.dow-month-day {
+  @include font-stack-condensed;
+  text-align: right;
+  font-size: 4rem;
+  margin: -20px 0;
+}
+.current-time {
+  text-align: right;
+  font-size: 7rem;
+}

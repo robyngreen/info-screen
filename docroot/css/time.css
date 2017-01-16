@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'SST';
+  src: url("../fonts/SST/Regular.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'SST-light';
+  src: url("../fonts/SST/Regular.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'SST-condensed';
+  src: url("../fonts/SST/Condensed.ttf") format("truetype"); }
+
+.time {
+  float: right;
+  width: 33%;
+  font-family: 'SST-light';
+  color: #fff;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
+  margin-top: 20px;
+  padding-right: 10px; }
+
+.dow-month-day {
+  font-family: 'SST-condensed';
+  text-align: right;
+  font-size: 4rem;
+  margin: -20px 0; }
+
+.current-time {
+  text-align: right;
+  font-size: 7rem; }

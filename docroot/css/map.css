@@ -10,8 +10,14 @@
   font-family: 'SST-condensed';
   src: url("../fonts/SST/Condensed.ttf") format("truetype"); }
 
-body {
-  margin: 1em 3em; }
+.map-wrapper {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 25px; }
 
-.page {
-  background-color: #fff; }
+.map {
+  width: 500px;
+  border: 1px solid white;
+  height: 250px;
+  margin: 0 20px; }

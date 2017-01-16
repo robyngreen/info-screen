@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'SST';
+  src: url("../fonts/SST/Regular.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'SST-light';
+  src: url("../fonts/SST/Regular.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'SST-condensed';
+  src: url("../fonts/SST/Condensed.ttf") format("truetype"); }
+
+.weather {
+  font-family: 'SST-light';
+  color: #fff;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
+  width: 66%;
+  float: left; }
+  .weather .wrapper {
+    margin-top: 15px; }
+
+.location {
+  font-family: 'SST-condensed';
+  font-size: 3rem;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 3px; }
+
+.current-temp {
+  font-size: 10rem;
+  float: left;
+  width: 25%;
+  margin-top: -40px;
+  text-align: right; }
+
+.current-weather {
+  float: left;
+  width: 25%; }
+  .current-weather canvas {
+    width: 175px; }

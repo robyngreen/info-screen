@@ -5,6 +5,10 @@
 // Import site utilities.
 @import '../../global/utils/init';
 
+body {
+  margin: 1em 3em;
+}
+
 .page {
   background-color: $color-white;
 }
