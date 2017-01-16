@@ -33,15 +33,15 @@
     </div>
 
     <div class="map-wrapper">
-      <div class="weather-map map"></div>
+      <div class="weather-map map">
+        <img src="http://api.wunderground.com/api/13d3adca9dd11d63/animatedradar/q/AR/Conway.png?width=500&height=250&newmaps=1&timelabel=1&timelabel.y=10&num=5&delay=50&smooth=1&noclutter=1&rainsnow=1">
+      </div>
       <div id="trafficMap" class="traffic-map map"></div>
     </div>
 
-    AIzaSyDOzStmGXlCBYxgCKLPruGgqQGGxIfnIaI
-
     <script src="/scripts/main.js"></script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=greenHome.initTraffic">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOzStmGXlCBYxgCKLPruGgqQGGxIfnIaI&callback=initTrafficMap">
     </script>
 
   </body>

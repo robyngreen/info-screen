@@ -14,6 +14,8 @@ var order = require('gulp-order');
 var del = require('del');
 
 // pluto sans extra light
+// Forecast: http://api.wunderground.com/api/13d3adca9dd11d63/forecast/q/AR/Conway.json
+// Hourly: http://api.wunderground.com/api/13d3adca9dd11d63/hourly/q/AR/Conway.json
 
 // Workflow:
 // npm creates/uses package.json - this installs packages

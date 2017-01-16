@@ -12,19 +12,11 @@
    */
   var greenHome = {
     /**
-     * Constructor.
+     * Constructor
+     * @return {null} Returns nothing.
      */
     init: function() {
       this.initSkyIcons();
-    },
-    initTraffic: function() {
-      var map = new google.maps.Map(document.getElementById('trafficMap'), {
-        zoom: 13,
-        center: {lat: 34.04924594193164, lng: -118.24104309082031}
-      });
-
-      var trafficLayer = new google.maps.TrafficLayer();
-      trafficLayer.setMap(map);
     },
     initSkyIcons: function() {
       var skycons = new Skycons({'color': 'white'});
@@ -43,7 +35,22 @@
     }
   };
 
-  // Initialize Javascript
+  // Initialize Javascript.
   greenHome.init();
 
 })(jQuery);
+
+// @todo: How can we do this async?
+/**
+ * Traffic map non-async
+ * @return {null} Returns nothing.
+ */
+function initTrafficMap() {
+  var map = new google.maps.Map(document.getElementById('trafficMap'), {
+    zoom: 9,
+    center: {lat: 34.8415512, lng: -92.3331572}
+  });
+
+  var trafficLayer = new google.maps.TrafficLayer();
+  trafficLayer.setMap(map);
+}
