@@ -6438,3 +6438,27 @@ body {
   width: 50%;
   font-family: 'SST-condensed';
   font-size: 1.5em; }
+
+.temps {
+  clear: both;
+  display: flex;
+  margin-top: 135px;
+  font-family: 'SST-condensed';
+  justify-content: center; }
+
+.tempContainer {
+  float: left;
+  width: 10px;
+  margin-right: 10px;
+  align-self: flex-end; }
+
+.hourlyGraph {
+  background: white; }
+
+.daytime {
+  background: rgba(244, 247, 45, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.5); }
+
+.nighttime {
+  background: rgba(0, 100, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.5); }

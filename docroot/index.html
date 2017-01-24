@@ -14,8 +14,13 @@
 
     <script src="/scripts/skycons.js"></script>
 
+    <!--//<script src="https://unpkg.com/react@15/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>//-->
+
   </head>
   <body>
+    <div id="app">{{{ reactMarkup }}}</div>
+
 
     <div class="weather">
       <div class="location">Conway</div>
@@ -28,6 +33,8 @@
           <p>Scattered thunderstorms. A few storms may be severe. High 67F. Winds SSE at 10 to 15 mph. Chance of rain 60%</p>
         </div>
       </div>
+
+      <div class="temps"></div>
     </div>
 
     <div class="time">
