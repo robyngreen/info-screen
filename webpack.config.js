@@ -10,9 +10,9 @@ module.exports = {
   devtool: 'eval',
   entry: './app-client.js',
   output: {
-    path: __dirname + '/docroot',
+    path: __dirname + '/docroot/scripts',
     filename: 'bundle.js',
-    publicPath: '/docroot/'
+    publicPath: '/docroot/scripts/'
   },
   module: {
     loaders: [{

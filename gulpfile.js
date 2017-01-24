@@ -13,6 +13,9 @@ var concat = require('gulp-concat');
 var order = require('gulp-order');
 var del = require('del');
 
+// npm run start
+// https://www.sitepoint.com/building-a-react-universal-blog-app-a-step-by-step-guide/
+//
 // pluto sans extra light
 // Forecast: http://api.wunderground.com/api/13d3adca9dd11d63/forecast/q/AR/Conway.json
 // Hourly: http://api.wunderground.com/api/13d3adca9dd11d63/hourly/q/AR/Conway.json
@@ -20,6 +23,8 @@ var del = require('del');
 // Workflow:
 // npm creates/uses package.json - this installs packages
 // What does bower.json do then?
+// ps aux|grep node
+// sudo kill -9 88311
 
 // http://treyhunner.com/2015/02/creating-a-custom-bootstrap-build/
 //
