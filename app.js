@@ -1,3 +1,5 @@
 // app.js
-require('babel/register')
-require('./app-server.js')
+'use strict';
+
+require('babel-register');
+require('./app/app-server.js');

@@ -12,11 +12,14 @@ import hogan from 'hogan-express'
 // Routes
 import routes from './routes'
 
+// Set a title from the command line for referrals
+process.title = process.argv[2];
+
 // Express
 const app = express()
 app.engine('html', hogan)
 app.set('views', __dirname + '/views')
-app.use('/', express.static(__dirname + '/docroot/'))
+app.use('/', express.static(__dirname + '/../docroot/'))
 app.set('port', (process.env.PORT || 3000))
 
 app.get('*',(req, res) => {

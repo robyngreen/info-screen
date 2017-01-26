@@ -13,8 +13,20 @@ var concat = require('gulp-concat');
 var order = require('gulp-order');
 var del = require('del');
 
-// npm run start
+// npm run
 // https://www.sitepoint.com/building-a-react-universal-blog-app-a-step-by-step-guide/
+// gulp to rpocess css
+//  need to watch bundle.js, but is only web packed watched in docroot changes (files sites oneup)
+//
+// npm install nodemon -g
+//
+// npm i -g npm-check-updates
+// npm-check-updates -u
+// npm install
+//
+// http://stackoverflow.com/questions/23258421/how-to-stop-app-that-node-js-express-npm-start
+// I'd be using pm2 or something the automatically handled this on the basis of a git push.
+//
 //
 // pluto sans extra light
 // Forecast: http://api.wunderground.com/api/13d3adca9dd11d63/forecast/q/AR/Conway.json

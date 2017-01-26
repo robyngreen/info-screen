@@ -11,9 +11,9 @@ class App extends Component {
   componentDidMount(){
     document.body.className=''
   }
-  render(){
+  render() {
     return (
-      <div>This is global test</div>
+      <div>reload2</div>
     )
   }
 }
