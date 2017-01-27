@@ -1,6 +1,6 @@
 # About
 
-This is a learnign project using Node.js + React for an info-screen display via a Raspberry-PI. We travel 80 miles every day taking the kids to school and back along I-40, so I thought it would be good to have a large information screen in our kitchen show the time, weather, traffic, radar and our family calendar.
+This is a project using Node.js + React for an info-screen display via a Raspberry-PI. We travel 80 miles every day taking the kids to school and back along I-40, so I thought it would be good to have a large information screen in our kitchen show the time, weather, traffic, radar and our family calendar.
 
 # Environment setup
 
