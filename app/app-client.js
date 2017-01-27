@@ -3,19 +3,13 @@
 // https://www.sitepoint.com/building-a-react-universal-blog-app-a-step-by-step-guide/
 'use strict';
 
-import React from 'react'
-import { render } from 'react-dom'
-import { Router } from 'react-router'
-import { browserHistory } from 'react-router'
+import React from "react";
+import ReactDOM from 'react-dom';
+import Weather from "./weather";
 
-// Routes
-import routes from './routes'
+const app = document.getElementById('app');
 
-const Routes = (
-  <Router history={browserHistory}>
-    { routes }
-  </Router>
-)
-
-const app = document.getElementById('app')
-render(Routes, app)
+ReactDOM.render(
+  <Weather />,
+  app
+);

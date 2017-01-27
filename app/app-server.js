@@ -3,25 +3,20 @@
 
 'use strict';
 
-import React from 'react'
-import { match, RoutingContext } from 'react-router'
-import ReactDOMServer from 'react-dom/server'
 import express from 'express'
+var proxy = require('proxy-middleware');
 import hogan from 'hogan-express'
 
-// Routes
-import routes from './routes'
+var webpack = require('webpack');
+var url = require('url');
+var path = require('path');
+var WebpackDevServer = require('webpack-dev-server');
+var config = require('../webpack.config');
 
 // Set a title from the command line for referrals
 process.title = process.argv[2];
 
-// Express
-const app = express()
-app.engine('html', hogan)
-app.set('views', __dirname + '/views')
-app.use('/', express.static(__dirname + '/../docroot/'))
-app.set('port', (process.env.PORT || 3000))
-
+/*
 app.get('*',(req, res) => {
 
   match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
@@ -44,8 +39,36 @@ app.get('*',(req, res) => {
     }
   })
 })
+*/
 
-app.listen(app.get('port'))
+// -------- The Proxy ----------------------
+const app = express();
+app.engine('html', hogan)
+// Proxy the request for static assets;
+app.use('/scripts', proxy(url.parse('http://localhost:8081/scripts')));
+app.use('/css', proxy(url.parse('http://localhost:8081/css')));
+app.use('/fonts', proxy(url.parse('http://localhost:8081/fonts')));
+app.use('/images', proxy(url.parse('http://localhost:8081/images')));
+app.set('port', (process.env.PORT || 3000));
+app.get('/*', function(req, res) {
+  res.sendFile(path.resolve(__dirname + '/../docroot/index.html'));
+});
+app.listen(app.get('port'));
 
-console.info('==> Server is listening in ' + process.env.NODE_ENV + ' mode')
-console.info('==> Go to http://localhost:%s', app.get('port'))
+// ----- The webpack dev server ------------------
+var server = new WebpackDevServer(webpack(config), {
+  contentBase: __dirname + '/../docroot',
+  historyApiFallback: true,
+  publicPath: config.output.publicPath,
+  stats: {
+    colors: true
+  }
+});
+
+server.listen(8081, "localhost", function() {});
+
+console.info('==> Server is listening');
+console.info('==> Go to http://localhost:%s', app.get('port'));
+
+console.info('==> WebpackDevServer is listening');
+console.info('==> Go to http://localhost:8081');

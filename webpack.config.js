@@ -2,17 +2,28 @@
 // This simply tells webpack how to work.
 'use strict';
 
-var loaders = ['react-hot', 'babel-loader'];
+//import webpack from 'webpack';
+//
+var webpack = require('webpack');
+
+var loaders = ['react-hot-loader', 'babel-loader'];
+var path = require('path');
 /*if (process.env.NODE_ENV === 'development') {
   loaders = ['react-hot','babel'];
 }*/
 module.exports = {
   devtool: 'eval',
-  entry: './app/app-client.js',
+  entry: [
+    'webpack-dev-server/client?http://localhost:8081',
+    'webpack-hot-middleware/client',
+    './app/app-client.js'
+  ],
   output: {
-    path: __dirname + '/docroot/scripts',
+    path: path.resolve(__dirname, 'docroot/scripts'),
+    //path: __dirname + '/docroot/scripts',
     filename: 'bundle.js',
-    publicPath: '/docroot/scripts/'
+    //publicPath: '/docroot/scripts/'
+    publicPath: 'http://localhost:8081/scripts'
   },
   module: {
     loaders: [{
@@ -20,5 +31,8 @@ module.exports = {
       loaders: loaders,
       exclude: /node_modules/
     }]
-  }
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+  ]
 };

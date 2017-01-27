@@ -14,6 +14,7 @@ var order = require('gulp-order');
 var del = require('del');
 
 // npm run
+// npm install --save-dev webpack-hot-middleware
 // https://www.sitepoint.com/building-a-react-universal-blog-app-a-step-by-step-guide/
 // gulp to rpocess css
 //  need to watch bundle.js, but is only web packed watched in docroot changes (files sites oneup)
