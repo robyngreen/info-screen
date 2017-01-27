@@ -1,13 +1,10 @@
-// webpack.config.js
-// This simply tells webpack how to work.
 'use strict';
 
-//import webpack from 'webpack';
-//
 var webpack = require('webpack');
 
 var loaders = ['react-hot-loader', 'babel-loader'];
 var path = require('path');
+// @todo: environment switching.
 /*if (process.env.NODE_ENV === 'development') {
   loaders = ['react-hot','babel'];
 }*/
@@ -15,7 +12,7 @@ module.exports = {
   devtool: 'eval',
   entry: [
     'webpack-dev-server/client?http://localhost:8081',
-    'webpack-hot-middleware/client',
+    'webpack-hot-middleware/client?path=http://localhost:8081/__webpack_hmr',
     './app/app-client.js'
   ],
   output: {
