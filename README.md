@@ -1,4 +1,10 @@
-Package.json configuration
+# Basic Node.js React info-screen display for use on a Raspberry-PI
+
+Text will go here explaining the project
+
+# Environment setup, including package.json and webpack + node + react.
+
+## Package.json configuration
 
 - Don't invoke with "webpack-dev-server --content-base docroot/ --hot --inline --devtool", just use node and setup environment variables in the config:
 
@@ -17,7 +23,7 @@ Package.json configuration
 
   'info-screen' here is simply the title we give to the node server for easy killing. It is optional. See below 'Stopping node server'
 
-Stopping Node Server
+## Stopping Node Server
 
 - Don't use ctrl+x, ctrl+r cmd+x, or whatever is appropriate for your environment, to stop node at the command line. This will stop the process _in the window_ but leave it running on your ports, and will throw a fatal error next time you try to spin up the server.
 
@@ -34,7 +40,8 @@ Stopping Node Server
 
   And simply run `npm stop` to kill your server.
 
-Webpack.config.js configuration
+##Webpack.config.js configuration
+
 Most recent versions of webpack will read webpack.config.js as default when in the same app directory as `node server.js`.
 
 For DEV environment, the following must be configured - note these aren’t the *only* configurations that should appear in their objects/arrays, simply ones that must be there. For instance, you might have `entry: ‘server.js’` there. Keep that and simply append these new values to the keys: `entry: [ ‘server.js’, webpack …’ ]`
@@ -62,3 +69,16 @@ filename: 'bundle.js', // the name of the file to save, literally will save bund
 NOTE: if you see a tutorial that uses “devServer” in webpack.config.js, RUN AWAY. This param is ignored in node.js and will only cause you headaches and heartaches.
 Server.js setup
 
+
+# URLs used
+
+- https://www.sitepoint.com/building-a-react-universal-blog-app-a-step-by-step-guide/
+- http://stackoverflow.com/questions/26203725/how-to-allow-for-webpack-dev-server-to-allow-entry-points-from-react-router
+- https://webpack.github.io/docs/tutorials/getting-started/
+- https://webpack.github.io/docs/webpack-dev-server.html
+- https://scotch.io/tutorials/create-a-simple-to-do-app-with-react
+- https://robots.thoughtbot.com/setting-up-webpack-for-react-and-hot-module-replacement
+- https://medium.com/@rajaraodv/webpack-the-confusing-parts-58712f8fcad9#.v8nylayok
+- http://matthewlehner.net/react-hot-module-replacement-with-webpack/
+- https://www.ctheu.com/2015/05/14/using-react-hot-loader-with-a-webpack-dev-server-and-a-node-server/
+- https://facebook.github.io/react/tutorial/tutorial.html
