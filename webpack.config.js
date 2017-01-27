@@ -20,9 +20,8 @@ module.exports = {
   ],
   output: {
     path: path.resolve(__dirname, 'docroot/scripts'),
-    //path: __dirname + '/docroot/scripts',
     filename: 'bundle.js',
-    //publicPath: '/docroot/scripts/'
+    //publicPath: '/docroot/scripts/' // For prod.
     publicPath: 'http://localhost:8081/scripts'
   },
   module: {
