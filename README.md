@@ -1,8 +1,8 @@
-# Basic Node.js React info-screen display for use on a Raspberry-PI
+# About
 
-Text will go here explaining the project
+This is a learnign project using Node.js + React for an info-screen display via a Raspberry-PI. We travel 80 miles every day taking the kids to school and back along I-40, so I thought it would be good to have a large information screen in our kitchen show the time, weather, traffic, radar and our family calendar.
 
-# Environment setup, including package.json and webpack + node + react.
+# Environment setup
 
 ## Package.json configuration
 
@@ -67,7 +67,8 @@ path: path.resolve(__dirname, 'docroot/scripts'), // the machine path to where t
 filename: 'bundle.js', // the name of the file to save, literally will save bundle.js in the path directory above.
 
 NOTE: if you see a tutorial that uses “devServer” in webpack.config.js, RUN AWAY. This param is ignored in node.js and will only cause you headaches and heartaches.
-Server.js setup
+
+## Server.js setup
 
 
 # URLs used
