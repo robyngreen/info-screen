@@ -37,6 +37,7 @@
     buildWeatherTemps: function() {
       // http://api.wunderground.com/api/13d3adca9dd11d63/hourly/q/AR/Conway.json
       // http://api.wunderground.com/api/13d3adca9dd11d63/forecast/q/AR/Conway.json
+      // http://api.wunderground.com/api/13d3adca9dd11d63/conditions/q/AR/Conway.json
       var $temps = $('.temps');
       var maxHeight = 75;
 
