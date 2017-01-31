@@ -67,3 +67,29 @@
 .nighttime {
   background: rgba(0, 100, 255, 0.25);
   border: 1px solid rgba(255, 255, 255, 0.5); }
+
+.forecastDay {
+  float: left;
+  width: 20%;
+  font-family: 'SST-condensed'; }
+
+.forecastDOW {
+  font-size: 2em;
+  text-align: center; }
+
+.forecastCondition {
+  text-align: center; }
+  .forecastCondition canvas {
+    width: 75px; }
+
+.hiLo {
+  font-size: 1.25em; }
+
+.hiLo-hi {
+  color: #e4c21a;
+  font-size: 1.5em; }
+
+.hiLo-lo {
+  color: #223094;
+  font-size: 1.25em;
+  text-shadow: 0px 0px; }

@@ -9,7 +9,7 @@ export default React.createClass({
   setTime: function(){
 
     var currentdate = new Date();
-    var hours = currentdate.getHours()
+    var hours = currentdate.getHours();
     var week = [ 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' ];
     var month = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
     var day = currentdate.getDay();

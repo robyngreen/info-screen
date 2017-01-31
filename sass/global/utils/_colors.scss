@@ -3,82 +3,10 @@
 // All Sass color variables prefixed with $color-.
 // This makes it easy to figure out what a variable
 // is for later.
-//
-// Markup:
-// <h3>Primary</h3>
-// <div class="kss-swatch" style="background-color: #b51a2e">
-//   <div class="kss-swatch__hex">$color-rinnai-red<br>#b51a2e</div>
-// </div>
-// <div class="kss-swatch" style="background-color: #cd163f">
-//   <div class="kss-swatch__hex">$color-rinnai-crimson<br>#cd163f</div>
-// </div>
-// <div class="kss-swatch" style="background-color: #888b8d">
-//   <div class="kss-swatch__hex">$color-rinnai-wedgewood<br>#888b8d</div>
-// </div>
-// <div class="kss-swatch" style="background-color: #99b1c3">
-//   <div class="kss-swatch__hex">$color-rinnai-nepal<br>#99b1c3</div>
-// </div>
-// <h3>Grays</h3>
-// <div class="kss-swatch" style="background-color: #58595b">
-//   <div class="kss-swatch__hex">$color-rinnai-abbey<br>#58595b</div>
-// </div>
-// <div class="kss-swatch" style="background-color: #c1bfaf">
-//   <div class="kss-swatch__hex">$color-rinnai-ash<br>#c1bfaf</div>
-// </div>
-// <div class="kss-swatch" style="background-color: #dcdad1">
-//   <div class="kss-swatch__hex">$color-rinnai-westar<br>#dcdad1</div>
-// </div>
-// <div class="kss-swatch" style="background-color: #474741">
-//   <div class="kss-swatch__hex">$color-rinnai-fuscous<br>#474741</div>
-// </div>
-// <h3>Backgrounds</h3>
-// <div class="kss-swatch" style="background-color: #dfe4ea">
-//   <div class="kss-swatch__hex">$color-rinnai-background-mystic<br>#dfe4ea</div>
-// </div>
-// <div class="kss-swatch" style="background-color: #f5f4f2">
-//   <div class="kss-swatch__hex">$color-rinnai-background-carra<br>#f5f4f2</div>
-// </div>
-// <div class="kss-swatch" style="background-color: #f2f2f2">
-//   <div class="kss-swatch__hex">$color-rinnai-background-concrete<br>#f2f2f2</div>
-// </div>
-// <div class="kss-swatch" style="background-color: #f9f8f6">
-//   <div class="kss-swatch__hex">$color-rinnai-background-pampas<br>#f9f8f6</div>
-// </div>
-// <div class="kss-swatch" style="background-color: #f9f9f9">
-//   <div class="kss-swatch__hex">$color-rinnai-background-alabaster<br>#f9f9f9</div>
-// </div>
-// <h3>Base Colors</h3>
-// <div class="kss-swatch" style="background-color: white">
-//   <div class="kss-swatch__hex">$color-white<br>#ffffff</div>
-// </div>
-// <div class="kss-swatch" style="background-color: black">
-//   <div class="kss-swatch__hex">$color-black<br>#000000</div>
-// </div>
-//
-// Weight: 999
-//
-// Style guide: colors
-
-// Primary
-$color-rinnai-red: #b51a2e;
-$color-rinnai-crimson: #cd163f;
-$color-rinnai-wedgewood: #4f86a0;
-$color-rinnai-nepal: #99b1c3;
-
-// Grays
-$color-rinnai-abbey: #58595b;
-$color-rinnai-ash: #c1bfaf;
-$color-rinnai-westar: #dcdad1;
-$color-rinnai-fuscous: #474741;
-
-// Background
-$color-rinnai-background-mystic: #dfe4ea;
-$color-rinnai-background-carra: #f5f4f2;
-$color-rinnai-background-concrete: #f2f2f2;
-$color-rinnai-background-sazerac: #fff5e1;
-$color-rinnai-background-pampas: #f9f8f6;
-$color-rinnai-background-alabaster: #f9f9f9;
 
 // Base Colors
 $color-white: #fff;
 $color-black: #000;
+
+$color-blue-light: rgba(0,100,255,.25);
+$color-orange-light: rgba(244, 247, 45, 0.25);
