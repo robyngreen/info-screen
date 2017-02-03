@@ -43,12 +43,17 @@
   @include font-stack-condensed;
   font-size: 1.5em;
 }
-.temps {
-  clear: both;
+.tempsForecastWrapper {
   display: flex;
+  clear: both;
+  flex-direction: row;
+  align-items: flex-start;
   margin-top: 135px;
+}
+.temps {
+  width: 75%;
+  display: flex;
   @include font-stack-condensed;
-  justify-content: center;
 }
 .tempContainer {
   float: left;
@@ -60,25 +65,40 @@
   background: white;
 }
 .daytime {
-  background: rgba(244, 247, 45, 0.25);
+  background: rgba(244, 247, 45, 0.5);
   border: 1px solid rgba(255,255,255,.5);
 }
 .nighttime {
-  background: rgba(0,100,255,.25);
+  background: rgba(0,100,255,.5);
   border: 1px solid rgba(255,255,255,.5);
 }
 .forecast {
-  margin-top: 3em;
+  width: 25%;
 }
 .forecastDay {
-  float: left;
-  width: 20%;
   @include font-stack-condensed;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.forecastWrapper {
+}
+.forecastHiLo-Hi {
+  margin-right: 10px;
+  background: rgba(244, 247, 45, 0.5);
+  border: 1px solid rgba(255,255,255,.5);
+  height: 10px;
 }
 .forecastDOW {
   font-size: 2em;
   text-align: center;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, .75);
+}
+.forecastHiLo-Lo {
+  background: rgba(0,100,255,.5);
+  border: 1px solid rgba(255,255,255,.5);
+  height: 10px;
+  margin-right: 10px;
 }
 .forecastCondition {
   text-align: center;

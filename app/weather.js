@@ -12,12 +12,13 @@ export default React.createClass({
     return {
       currentTemp: '',
       currentConditions: '',
-      hourlyTemps: [],
       forecast: [],
-      splicedForecast: [],
+      hourlyTemps: [],
       max: 500,
       min: -500,
       maxHeight: 75,
+      numForecast: 3,
+      splicedForecast: [],
       weatherDataURL: 'http://api.wunderground.com/api/13d3adca9dd11d63/hourly/conditions/forecast10day/q/AR/Conway.json',
       weatherDataURLDev: '/scripts/Conway.json'
     }
@@ -40,7 +41,7 @@ export default React.createClass({
         // Remove the first one (today).
         splicedForecast.splice(0, 1);
         // Only show five items.
-        splicedForecast.splice(5);
+        splicedForecast.splice(self.state.numForecast);
 
         // Find the max temperature.
         var max = Math.max.apply(null,
@@ -119,6 +120,7 @@ export default React.createClass({
 
     for (var forecast of this.state.splicedForecast) {
       var icon = forecast.icon;
+      console.info(icon);
       if (icon === 'clear') {
         icon = 'clear-day';
       }
@@ -127,6 +129,9 @@ export default React.createClass({
       }
       else if (icon === 'chancerain') {
         icon = 'rain';
+      }
+      else if (icon === 'mostlycloudy') {
+        icon = 'cloudy';
       }
       skycons.set('weather-icon-' + forecast.date.epoch, icon);
     }
@@ -154,40 +159,45 @@ export default React.createClass({
           </div>
         </div>
 
-        <div className="temps">
-          { this.state.hourlyTemps.map(function(temp) {
-            const newTemp = temp.temp.english;
-            const thisHeight = Math.round(newTemp / max * maxHeight);
+        <div className="tempsForecastWrapper">
+          <div className="temps">
+            { this.state.hourlyTemps.map(function(temp) {
+              const newTemp = temp.temp.english;
+              const thisHeight = Math.round(newTemp / max * maxHeight);
 
-            var time = temp.FCTTIME.hour;
-            var daytime = 'nighttime';
-            if (time >= 6 && time <= 19) {
-              daytime = 'daytime';
-            }
-            if (time > 12) {
-              time = time - 12;
-            }
-            return (
-              <div key={ temp.FCTTIME.epoch } className="tempContainer">
-                <div className="hourlyTemp"> { newTemp } </div>
-                <div className={"hourlyGraph " + daytime} style={{height: thisHeight + 'px'}}></div>
-                <div className="hourlyTime"> { time } </div>
-              </div>
-            )
-          })}
-        </div>
-
-        <div className="forecast">
-          { this.state.splicedForecast.map(function(forecast) {
-              return(
-                <div key={ forecast.date.epoch } className="forecastDay">
-                  <div className="forecastCondition"><canvas id={ "weather-icon-" + forecast.date.epoch }></canvas></div>
-                  <div className="forecastDOW"> { forecast.date.weekday } </div>
-                  <div className="hiLo"><span className="hiLo-hi">{ forecast.high.fahrenheit }</span> / <span className="hiLo-lo">{ forecast.low.fahrenheit }</span></div>
+              var time = temp.FCTTIME.hour;
+              var daytime = 'nighttime';
+              if (time >= 6 && time <= 19) {
+                daytime = 'daytime';
+              }
+              if (time > 12) {
+                time = time - 12;
+              }
+              return (
+                <div key={ temp.FCTTIME.epoch } className="tempContainer">
+                  <div className="hourlyTemp"> { newTemp } </div>
+                  <div className={"hourlyGraph " + daytime} style={{height: thisHeight + 'px'}}></div>
+                  <div className="hourlyTime"> { time } </div>
                 </div>
               )
-            })
-          }
+            })}
+          </div>
+
+          <div className="forecast">
+            { this.state.splicedForecast.map(function(forecast) {
+                const hiWidth = Math.round(forecast.high.fahrenheit / 125 * 225);
+                const loWidth = Math.round(forecast.low.fahrenheit / 125 * 225);
+                return(
+                  <div key={ forecast.date.epoch } className="forecastDay">
+                    <div className="forecastDOW">{ forecast.date.weekday }</div>
+                    <div className="forecastCondition"><canvas id={ "weather-icon-" + forecast.date.epoch }></canvas></div>
+                    <div className="hiLo"><span className="hiLo-hi">{ forecast.high.fahrenheit }</span> / <span className="hiLo-lo">{ forecast.low.fahrenheit }</span></div>
+
+                  </div>
+                )
+              })
+            }
+          </div>
         </div>
       </div>
     );
