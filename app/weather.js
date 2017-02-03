@@ -93,49 +93,64 @@ export default React.createClass({
     ];
 
     var skycons = new Skycons({'color': 'white'});
-
-    // Evaluate the main icon (current state)
-    // Icon correction.
-    var icon = this.state.icon;
-    var currentdate = new Date();
-    var hours = currentdate.getHours();
-    if (hours >= 6 && hours <= 19) {
-      if (icon === 'clear') {
-        icon = 'clear-day';
-      }
-      else if (icon === 'partlycloudy') {
-        icon = 'partly-cloudy-day';
-      }
-    }
-    else {
-      if (icon === 'nt_clear' || icon === 'clear') {
-        icon = 'clear-night';
-      }
-      else if (icon === 'partlycloudy') {
-        icon = 'partly-cloudy-night';
-      }
-    }
-
+    var icon = this.convertIcon(this.state.icon, true);
     skycons.set('weather-icon', icon);
 
     for (var forecast of this.state.splicedForecast) {
-      var icon = forecast.icon;
-      console.info(icon);
-      if (icon === 'clear') {
-        icon = 'clear-day';
-      }
-      else if (icon === 'partlycloudy') {
-        icon = 'partly-cloudy-day';
-      }
-      else if (icon === 'chancerain') {
-        icon = 'rain';
-      }
-      else if (icon === 'mostlycloudy') {
-        icon = 'cloudy';
-      }
+      var icon = this.convertIcon(forecast.icon, false);
+
       skycons.set('weather-icon-' + forecast.date.epoch, icon);
     }
    skycons.play();
+  },
+  /**
+   * Converts WUnderground icons to skycons.
+   * @param  {string} original
+   *   Icon string to convert.
+   * @param  {bool} daytime
+   *   Should use daytime vs nighttime conversion.
+   *
+   * @return {string}
+   *   Converted icon string.
+   */
+  convertIcon: function(icon, daytime) {
+    console.info(icon);
+    if (icon === 'clear') {
+      icon = 'clear-day';
+    }
+    else if (icon === 'partlycloudy') {
+      icon = 'partly-cloudy-day';
+    }
+    else if (icon === 'chancerain') {
+      icon = 'rain';
+    }
+    else if (icon === 'mostlycloudy') {
+      icon = 'cloudy';
+    }
+    else if (icon === 'chancetstorms') {
+      icon = 'rain';
+    }
+
+    // Convert for daytime vs nighttime.
+    if (daytime === true) {
+      var currentdate = new Date();
+      var hours = currentdate.getHours();
+      if (hours >= 6 && hours <= 19) {
+        if (icon === 'partlycloudy') {
+          icon = 'partly-cloudy-day';
+        }
+      }
+      else {
+        if (icon === 'nt_clear' || icon === 'clear-day') {
+          icon = 'clear-night';
+        }
+        else if (icon === 'partlycloudy') {
+          icon = 'partly-cloudy-night';
+        }
+      }
+    }
+
+    return icon;
   },
   /**
    * Renders markup
