@@ -9,6 +9,15 @@ body {
   margin: 1em 3em;
 }
 
+.info-container {
+  display: flex;
+}
+.left {
+  width: 66%;
+}
+.right {
+  margin-left: auto;
+}
 .page {
   background-color: $color-white;
 }

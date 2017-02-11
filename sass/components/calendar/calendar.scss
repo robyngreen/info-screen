@@ -1,0 +1,30 @@
+// Calendar
+//
+// Calendar wrapper styles used site wide.
+
+// Import site utilities.
+@import '../../global/utils/init';
+
+.calendar {
+  @include font-stack-condensed;
+  color: #fff;
+  margin-top: 3em;
+  text-align: right;
+  margin-left: auto;
+  width: 95%;
+}
+.eventItem {
+  margin-bottom: 1.75em;
+  padding: 5px 10px 0 0;
+}
+.eventDate {
+  font-size: 2.25rem;
+}
+.eventTitle {
+  font-size: 3rem;
+}
+.today {
+  background: rgba(0, 208, 255, 0.19);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, .10);
+}

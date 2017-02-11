@@ -27,7 +27,7 @@ export default React.createClass({
     var self = this;
     this.serverRequest =
       axios.all([
-        axios.get(this.state.weatherDataURLDev)
+        axios.get(this.state.weatherDataURL)
       ])
       .then(axios.spread(function (weather) {
         const currentConditions = weather.data.forecast.txt_forecast.forecastday[0].fcttext;
@@ -85,13 +85,6 @@ export default React.createClass({
    * Called whenever the dom is updated.
    */
   componentDidUpdate: function() {
-    // The skycons list.
-    const list = [
-      "clear-day", "clear-night", "partly-cloudy-day",
-      "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
-      "fog"
-    ];
-
     var skycons = new Skycons({'color': 'white'});
     var icon = this.convertIcon(this.state.icon, true);
     skycons.set('weather-icon', icon);
@@ -114,6 +107,12 @@ export default React.createClass({
    *   Converted icon string.
    */
   convertIcon: function(icon, daytime) {
+    // The skycons list.
+    const list = [
+      "clear-day", "clear-night", "partly-cloudy-day",
+      "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
+      "fog"
+    ];
     console.info(icon);
     if (icon === 'clear') {
       icon = 'clear-day';
@@ -128,6 +127,9 @@ export default React.createClass({
       icon = 'cloudy';
     }
     else if (icon === 'chancetstorms') {
+      icon = 'rain';
+    }
+    else if (icon === 'tstorms') {
       icon = 'rain';
     }
 

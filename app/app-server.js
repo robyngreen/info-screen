@@ -2,7 +2,7 @@
 
 import express from 'express'
 var proxy = require('proxy-middleware');
-import hogan from 'hogan-express'
+import hogan from 'hogan-express';
 
 var webpack = require('webpack');
 var url = require('url');
@@ -14,6 +14,7 @@ var compiler = webpack(config);
 // Set a title from the command line for referrals.
 process.title = process.argv[2];
 
+// Servers.
 // -------- The Proxy ----------------------
 const app = express();
 app.engine('html', hogan);

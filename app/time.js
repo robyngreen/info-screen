@@ -30,8 +30,8 @@ export default React.createClass({
 
     this.setState({
       dow: week[day],
-      month: month[currentdate.getMonth() + 1],
-      day: day,
+      month: month[currentdate.getMonth()],
+      day: currentdate.getDate(),
       hours: hours,
       minutes: minutes,
       ampm: ampm

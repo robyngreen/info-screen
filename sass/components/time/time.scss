@@ -6,8 +6,6 @@
 @import '../../global/utils/init';
 
 .time {
-  float: right;
-  width: 33%;
   @include font-stack-light;
   color: $color-white;
   @include text-shadow-light;
