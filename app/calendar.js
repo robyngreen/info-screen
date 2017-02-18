@@ -45,10 +45,12 @@ export default React.createClass({
    * Called whenever the component is mounted.
    */
   componentDidMount: function() {
-    // Refresh weather data every 10 minutes
-    /*window.setInterval(function () {
+    // In milliseconds, so * 1000 to end.
+    // 60 minutes * 60 seconds * 1000 milliseconds.
+    /*var refreshTime = 60 * 60 * 1000;
+    window.setInterval(function () {
       this.getWeatherData();
-    }.bind(this), 600000);*/
+    }.bind(this), refreshTime);*/
   },
   /**
    * Renders markup
