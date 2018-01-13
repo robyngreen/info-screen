@@ -2,6 +2,21 @@
 
 This is a project using Node.js + React for an info-screen display via a Raspberry-PI. We travel 80 miles every day taking the kids to school and back along I-40, so I thought it would be good to have a large information screen in our kitchen show the time, weather, traffic, radar and our family calendar.
 
+# Build info
+
+`npm run dev`
+`npm stop`
+
+## TODO
+- Set environment variables for prod vs local dev.
+- Use JSON for API data on local dev.
+- Refresh only on prod.
+- Global google API key.
+- Boot inot kiosk on pi.
+- Set wake/sleep schedule on pi.
+- Color code time.
+
+
 # Environment setup
 
 ## Package.json configuration
