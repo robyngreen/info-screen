@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "node server.js infoscreen",
     "build": "next build",
-    "start": "set NODE_ENV=prod && npm run build && node server.js infoscreen",
+    "start-build": "set NODE_ENV=prod && npm run build && node server.js infoscreen",
+    "start": "set NODE_ENV=prod && node server.js infoscreen",
     "stop": "killall -SIGINT infoscreen"
   },
   "keywords": [],
