@@ -15,6 +15,32 @@ This is a project using Node.js + React for an info-screen display via a Raspber
 - Boot inot kiosk on pi.
 - Set wake/sleep schedule on pi.
 - Color code time.
+- NPM run on boot
+- Automatic git deployment -- no
+
+Start pi on boot
+
+```5. Make it run on boot
+This is the hardest part if you don't really know what you're doing.
+
+You can define things to run on boot in /etc/rc.local. In that shell script, you don't have the same path as when you log in, so just running node app.js won't do the trick.
+
+I tried a lot of different things that all gave errors like Illegal instruction or Permission denied or File not found.
+
+What does work, is running one command as the default pi user. Because that user does have node in his path, the command is known.
+
+su pi -c 'node /home/pi/server.js < /dev/null &'
+I suggest using an absolute path to your Node.js-file just to make sure.
+
+```
+
+
+```Warning: setState(...): Can only update a mounting component. This usually means you called setState() outside componentWillMount() on the server. This is a no-op.
+
+Please check the code for the Weather component.
+Warning: setState(...): Can only update a mounting component. This usually means you called setState() outside componentWillMount() on the server. This is a no-op.
+
+Please check the code for the Calendar component.```
 
 
 # Environment setup

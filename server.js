@@ -2,7 +2,8 @@
 
 const express = require('express');
 const next = require('next');
-const app = next({ dev: true });
+const dev = process.env.NODE_ENV !== 'prod';
+const app = next({ dev });
 const handle = app.getRequestHandler();
 const normalizePort = require('./lib/normalize-port');
 
