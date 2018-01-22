@@ -2,6 +2,7 @@
 
 import React from 'react';
 import axios from 'axios';
+const dev = process.env.NODE_ENV !== 'prod';
 
 export default class Weather extends React.Component {
   constructor () {
@@ -43,6 +44,9 @@ export default class Weather extends React.Component {
         // Only show five items.
         splicedForecast.splice(self.state.numForecast);
 
+        var splicedhourlyTemps = hourlyTemps;
+        splicedhourlyTemps.splice(30);
+
         // Find the max temperature.
         var max = Math.max.apply(null,
           Object.keys(weather.data.hourly_forecast).map(function(e) {
@@ -52,7 +56,7 @@ export default class Weather extends React.Component {
         self.setState({
           currentConditions: currentConditions,
           currentTemp: currentTemp,
-          hourlyTemps: hourlyTemps,
+          hourlyTemps: splicedhourlyTemps,
           icon: icon,
           max: max,
           forecast: forecast,
@@ -79,12 +83,16 @@ export default class Weather extends React.Component {
    * Called whenever the component is mounted.
    */
   componentDidMount() {
-    // In milliseconds, so * 1000 to end.
-    // 60 minutes * 60 seconds * 1000 milliseconds.
-    var refreshTime = 60 * 60 * 1000;
-    window.setInterval(function () {
-      this.getWeatherData();
-    }.bind(this), refreshTime);
+    const self = this;
+    // Only refresh on prod.
+    if (!dev) {
+      // In milliseconds, so * 1000 to end.
+      // 60 minutes * 60 seconds * 1000 milliseconds.
+      var refreshTime = 15 * 60 * 1000;
+      window.setInterval(function () {
+        self.getWeatherData();
+      }.bind(this), refreshTime);
+    }
   }
 
   /**
@@ -256,7 +264,7 @@ export default class Weather extends React.Component {
             float: left;
             width: 50%;
             font-family: 'SST-condensed';
-            font-size: 1.5em; }
+            font-size: 2.5em; }
 
           .tempsForecastWrapper {
             display: flex;
@@ -272,7 +280,7 @@ export default class Weather extends React.Component {
 
           .tempContainer {
             float: left;
-            width: 10px;
+            width: 12px;
             margin-right: 10px;
             align-self: flex-end; }
 
