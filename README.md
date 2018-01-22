@@ -7,6 +7,16 @@ This is a project using Node.js + React for an info-screen display via a Raspber
 `npm run dev`
 `npm stop`
 
+Kiosk mode:
+- Autostart in desktop with autologin via raspi-config
+- Edit ~/.config/lxsession/LXDE-pi/autostart with the appropriate params
+- Create ~/kiosk-mode.sh with the appropriate code:
+```cd /home/pi/apps/info-screen
+node server.js infoscreen < /dev/null &
+sleep 120
+chromium-browser --disable-gpu --ignore-certificate-errors --disable-sync --disable-restore-session-state --noerordialogs --disable-session-crashed-bubble --disable-infobars --kiosk http://localhost:3000```
+- Add @sh /home/pi/kiosk-mode.sh to ~.config/lxsession/LXDE-pi/autostart
+
 ## TODO
 - Set environment variables for prod vs local dev.
 - Use JSON for API data on local dev.
