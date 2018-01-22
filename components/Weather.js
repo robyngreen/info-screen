@@ -20,7 +20,8 @@ export default class Weather extends React.Component {
       numForecast: 3,
       splicedForecast: [],
       weatherDataURL: 'http://api.wunderground.com/api/13d3adca9dd11d63/hourly/conditions/forecast10day/q/AR/Conway.json',
-      weatherDataURLDev: '/scripts/Conway.json'
+      weatherDataURLDev: '/scripts/Conway.json',
+      alertDataURL: 'http://api.wunderground.com/api/13d3adca9dd11d63/alerts/q/AR/Conway.json'
     };
   }
 

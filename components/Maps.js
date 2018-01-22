@@ -28,7 +28,7 @@ export default class Maps extends React.Component {
       var refreshTime = 15 * 60 * 1000;
       window.setInterval(function () {
         self.setState({
-          radar: self.state.radar,
+          radar: self.state.radar + '&time=' + new Date(),
         });
       }.bind(this), refreshTime);
     }
