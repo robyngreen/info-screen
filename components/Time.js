@@ -74,12 +74,12 @@ export default class Time extends React.Component {
           .dow-month-day {
             font-family: 'SST-condensed';
             text-align: right;
-            font-size: 4rem;
+            font-size: 3rem;
             margin: -20px 0; }
 
           .current-time {
             text-align: right;
-            font-size: 7rem; }
+            font-size: 5rem; }
         `}</style>
       </div>
     );

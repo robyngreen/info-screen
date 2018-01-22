@@ -2,6 +2,7 @@
 
 import React from 'react';
 import axios from 'axios';
+const dev = process.env.NODE_ENV !== 'prod';
 
 export default class Calendar extends React.Component {
   constructor () {
@@ -45,12 +46,16 @@ export default class Calendar extends React.Component {
    * Called whenever the component is mounted.
    */
   componentDidMount() {
-    // In milliseconds, so * 1000 to end.
-    // 60 minutes * 60 seconds * 1000 milliseconds.
-    /*var refreshTime = 60 * 60 * 1000;
-    window.setInterval(function () {
-      this.getWeatherData();
-    }.bind(this), refreshTime);*/
+    const self = this;
+    // Only refresh on prod.
+    if (!dev) {
+      // In milliseconds, so * 1000 to end.
+      // 60 minutes * 60 seconds * 1000 milliseconds.
+      var refreshTime = 60 * 60 * 1000;
+      window.setInterval(function () {
+        self.getWeatherData();
+      }.bind(this), refreshTime);
+    }
   }
 
   /**
@@ -105,7 +110,7 @@ export default class Calendar extends React.Component {
             font-size: 2.25rem; }
 
           .eventTitle {
-            font-size: 3rem; }
+            font-size: 1.5rem; }
 
           .today {
             background: rgba(0, 208, 255, 0.19);

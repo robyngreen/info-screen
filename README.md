@@ -4,6 +4,24 @@ This is a project using Node.js + React for an info-screen display via a Raspber
 
 # Build info
 
+You have to enable HDMI out:
+
+```
+
+Power up your Raspberry Pi and open a terminal
+Open the Raspberry Pi configuration file for editing with this command:
+sudo nano /boot/config.txt
+Use arrows to get to the end of the file and add these 3 lines:
+#Always force HDMI output and enable HDMI sound
+
+hdmi_force_hotplug=1
+
+hdmi_drive=2
+Save the changes by pressing CTRL + O
+Exit the editor by pressing CTRL + X
+```
+
+
 `npm run dev`
 `npm stop`
 
