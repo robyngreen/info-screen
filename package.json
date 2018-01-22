@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "node server.js infoscreen",
     "build": "next build",
-    "start": "npm run build && node server.js infoscreen",
+    "start-build": "set NODE_ENV=prod && npm run build && node server.js infoscreen",
+    "start": "set NODE_ENV=prod && node server.js infoscreen",
     "stop": "killall -SIGINT infoscreen"
   },
   "keywords": [],
@@ -15,8 +16,6 @@
   "dependencies": {
     "axios": "^0.15.3",
     "babel-plugin-inline-import": "^2.0.6",
-    "cheerio": "^1.0.0-rc.2",
-    "es6-promise": "^4.1.1",
     "express": "^4.16.2",
     "google-map-react": "^0.27.0",
     "next": "^4.2.3",
