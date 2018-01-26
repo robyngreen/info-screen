@@ -2,7 +2,7 @@
 
 import React from "react";
 import GoogleMap from 'google-map-react';
-const dev = process.env.NODE_ENV !== 'prod';
+const dev = process.env.NODE_ENV !== 'production';
 
 export default class Maps extends React.Component {
   constructor() {

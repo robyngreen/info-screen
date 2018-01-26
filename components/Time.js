@@ -5,13 +5,17 @@ import React from "react";
 export default class Time extends React.Component {
   constructor() {
     super();
+
+    // Bind class to non-react class. See
+    // https://github.com/goatslacker/alt/issues/283
+    // Otherwise `this.{reactMethod}` will fail.
+    this.setTime = this.setTime.bind(this);
   }
 
   /**
    * Sets all the time variables.
    */
   setTime() {
-
     var currentdate = new Date();
     var hours = currentdate.getHours();
     var week = [ 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' ];
@@ -25,10 +29,10 @@ export default class Time extends React.Component {
       ampm = 'p.m.'
     }
 
-    // minutes are the same on every time zone
+    // Minutes are the same on every time zone.
     var minutes = currentdate.getUTCMinutes();
 
-    // add leading zero, first convert hours to string
+    // Add leading zero, first convert hours to string.
     minutes = minutes + "";
     if( minutes.length == 1 ){ minutes = "0" + minutes; }
 
@@ -52,10 +56,8 @@ export default class Time extends React.Component {
   /**
    * Called whenever the component is mounted.
    */
-  componentDidMount(){
-    window.setInterval(function () {
-      this.setTime();
-    }.bind(this), 1000);
+  componentDidMount() {
+    setInterval(this.setTime, 1000);
   }
 
   render() {

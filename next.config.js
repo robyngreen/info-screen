@@ -1,14 +1,12 @@
-module.exports = {
-  webpack: (config, { dev }) => {
-    // disable sourcemaps of webpack
-    config.devtool = false;
+const webpack = require('webpack');
 
-    // disable soucemaps of babel-loader
-    for (const r of config.module.rules) {
-      if (r.loader === 'babel-loader') {
-        r.options.sourceMaps = false;
-      }
-    }
+module.exports = {
+  webpack: (config) => {
+    config.plugins.push(
+      new webpack.DefinePlugin({
+        'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+      })
+    );
 
     return config;
   }

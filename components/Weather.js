@@ -2,11 +2,16 @@
 
 import React from 'react';
 import axios from 'axios';
-const dev = process.env.NODE_ENV !== 'prod';
+const dev = process.env.NODE_ENV !== 'production';
 
 export default class Weather extends React.Component {
   constructor () {
     super();
+
+    // Bind class to non-react class. See
+    // https://github.com/goatslacker/alt/issues/283
+    // Otherwise `this.{reactMethod}` will fail.
+    this.getWeatherData = this.getWeatherData.bind(this);
 
     // Set defaults.
     this.state = {
@@ -39,19 +44,18 @@ export default class Weather extends React.Component {
         var icon = weather.data.forecast.txt_forecast.forecastday[0].icon;
 
         // Splice the forecast.
-        var splicedForecast = forecast;
+        let splicedForecast = forecast;
         // Remove the first one (today).
         splicedForecast.splice(0, 1);
         // Only show five items.
         splicedForecast.splice(self.state.numForecast);
-
-        var splicedhourlyTemps = hourlyTemps;
+        let splicedhourlyTemps = hourlyTemps;
         splicedhourlyTemps.splice(30);
 
         // Find the max temperature.
-        var max = Math.max.apply(null,
-          Object.keys(weather.data.hourly_forecast).map(function(e) {
-            return weather.data.hourly_forecast[e].temp.english;
+        let max = Math.max.apply(null,
+          Object.keys(splicedhourlyTemps).map(function(e) {
+            return splicedhourlyTemps[e].temp.english;
         }));
 
         self.setState({
@@ -90,9 +94,7 @@ export default class Weather extends React.Component {
       // In milliseconds, so * 1000 to end.
       // 60 minutes * 60 seconds * 1000 milliseconds.
       var refreshTime = 15 * 60 * 1000;
-      window.setInterval(function () {
-        self.getWeatherData();
-      }.bind(this), refreshTime);
+      setInterval(this.getWeatherData, refreshTime);
     }
   }
 
@@ -129,7 +131,6 @@ export default class Weather extends React.Component {
       "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
       "fog"
     ];
-    console.info(icon);
     if (icon === 'clear') {
       icon = 'clear-day';
     }
@@ -197,7 +198,10 @@ export default class Weather extends React.Component {
           <div className="temps">
             { this.state.hourlyTemps.map(function(temp) {
               const newTemp = temp.temp.english;
-              const thisHeight = Math.round(newTemp / max * maxHeight);
+              const tempHeight = Math.round(newTemp / max * maxHeight);
+              // Set the percipitation chance to be the % of the height.
+              const precipChance = Math.round(temp.pop / 100 * maxHeight);
+              const containerHeight = (precipChance > tempHeight) ? precipChance : tempHeight;
 
               var time = temp.FCTTIME.hour;
               var daytime = 'nighttime';
@@ -210,7 +214,10 @@ export default class Weather extends React.Component {
               return (
                 <div key={ temp.FCTTIME.epoch } className="tempContainer">
                   <div className="hourlyTemp"> { newTemp } </div>
-                  <div className={"hourlyGraph " + daytime} style={{height: thisHeight + 'px'}}></div>
+                  <div className="hourlyContainer" style={{height: containerHeight + 'px'}}>
+                    <div className={"hourlyGraph " + daytime} style={{height: tempHeight + 'px'}}></div>
+                    <div className="hourlyGraphPop" style={{height: precipChance + 'px'}}></div>
+                  </div>
                   <div className="hourlyTime"> { time } </div>
                 </div>
               )
@@ -280,13 +287,26 @@ export default class Weather extends React.Component {
             font-family: 'SST-condensed'; }
 
           .tempContainer {
-            float: left;
             width: 12px;
             margin-right: 10px;
             align-self: flex-end; }
 
+          .hourlyContainer {
+            display: flex; }
+
           .hourlyGraph {
-            background: white; }
+            background: white;
+            width: 12px;
+            align-self: flex-end;
+            margin-right: 2px; }
+
+          .hourlyGraphPop {
+            background: rgba(218, 228, 230, .88);
+            width: 5px;
+            align-self: flex-end;
+            position: absolute;
+            margin-left: 8px;
+            border-left: 1px solid rgba(255, 255, 255, .5); }
 
           .hourlyTime {
             text-align: center; }
