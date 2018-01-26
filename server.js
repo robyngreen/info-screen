@@ -7,8 +7,9 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 const normalizePort = require('./lib/normalize-port');
 
-// Setup some port stuff.
+// Setting the title allows the process to be killed.
 process.title = process.argv[2];
+// Setup some port stuff.
 const port = normalizePort(process.env.PORT || 3000);
 
 app.prepare()

@@ -2,11 +2,16 @@
 
 import React from 'react';
 import axios from 'axios';
-const dev = process.env.NODE_ENV !== 'prod';
+const dev = process.env.NODE_ENV !== 'production';
 
 export default class Calendar extends React.Component {
   constructor () {
     super();
+
+    // Bind class to non-react class. See
+    // https://github.com/goatslacker/alt/issues/283
+    // Otherwise `this.{reactMethod}` will fail.
+    this.buildCalendar = this.buildCalendar.bind(this);
 
     // Set defaults.
     this.state = {
@@ -46,15 +51,12 @@ export default class Calendar extends React.Component {
    * Called whenever the component is mounted.
    */
   componentDidMount() {
-    const self = this;
     // Only refresh on prod.
     if (!dev) {
       // In milliseconds, so * 1000 to end.
       // 60 minutes * 60 seconds * 1000 milliseconds.
       var refreshTime = 60 * 60 * 1000;
-      window.setInterval(function () {
-        self.getWeatherData();
-      }.bind(this), refreshTime);
+      setInterval(this.buildCalendar, refreshTime);
     }
   }
 
@@ -63,6 +65,7 @@ export default class Calendar extends React.Component {
    * @return string Any html
    */
   render() {
+    // @TODO: this logic should be somewhere else.
     let self = this;
     var today = new Date();
     var todayMonth = (today.getMonth() + 1);

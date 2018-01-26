@@ -4,10 +4,9 @@
   "description": "",
   "main": "app-server.js",
   "scripts": {
-    "dev": "node server.js infoscreen",
+    "dev": "npm run build && NODE_ENV=development node server.js infoscreen",
     "build": "next build",
-    "start-build": "set NODE_ENV=prod && npm run build && node server.js infoscreen",
-    "start": "set NODE_ENV=prod && node server.js infoscreen",
+    "start": "npm run build && NODE_ENV=production node server.js infoscreen",
     "stop": "killall -SIGINT infoscreen"
   },
   "keywords": [],
@@ -16,8 +15,10 @@
   "dependencies": {
     "axios": "^0.15.3",
     "babel-plugin-inline-import": "^2.0.6",
+    "dotenv": "^4.0.0",
     "express": "^4.16.2",
     "google-map-react": "^0.27.0",
+    "nconf": "^0.10.0",
     "next": "^4.2.3",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
