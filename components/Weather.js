@@ -287,7 +287,7 @@ export default class Weather extends React.Component {
             font-family: 'SST-condensed'; }
 
           .tempContainer {
-            width: 12px;
+            width: 15px;
             margin-right: 10px;
             align-self: flex-end; }
 
